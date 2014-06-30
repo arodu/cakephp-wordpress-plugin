@@ -1,4 +1,4 @@
-cakephp-wordress-plugin
+cakephp-wordpress-plugin
 =======================
 
 CakePHP ORM implemented for WordPress database format
