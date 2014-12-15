@@ -1,12 +1,15 @@
 <?php
+
+App::uses('WordpressAppModel', 'Wordpress.Model');
+
 class Post extends WordpressAppModel {
 
-	var $name = 'Post';
-	var $primaryKey = 'ID';
-    var $useTable = 'wp_posts';
+	public $name = 'Post';
+	public $primaryKey = 'ID';
+    public $useTable = 'wp_posts';
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
-	var $belongsTo = array(
+	public $belongsTo = array(
 		'PostParent' => array(
 			'className' => 'Wordpress.Post',
 			'foreignKey' => 'post_parent',
@@ -24,7 +27,7 @@ class Post extends WordpressAppModel {
 		)
 	);
 
-	var $hasMany = array(
+	public $hasMany = array(
 		'Postmetum' => array(
 			'className' => 'Wordpress.Postmetum',
 			'foreignKey' => 'post_id',

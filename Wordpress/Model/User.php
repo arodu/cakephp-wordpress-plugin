@@ -1,12 +1,15 @@
 <?php
+
+App::uses('WordpressAppModel', 'Wordpress.Model');
+
 class User extends WordpressAppModel {
 
-	var $name = 'User';
-	var $primaryKey = 'ID';
-    var $useTable = 'wp_users';
+	public $name = 'User';
+	public $primaryKey = 'ID';
+    public $useTable = 'wp_users';
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
-	var $hasMany = array(
+	public $hasMany = array(
 		'Comment' => array(
 			'className' => 'Wordpress.Comment',
 			'foreignKey' => 'user_id',

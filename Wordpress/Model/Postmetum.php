@@ -1,12 +1,15 @@
 <?php
+
+App::uses('WordpressAppModel', 'Wordpress.Model');
+
 class Postmetum extends AppModel {
 
-	var $name = 'Postmetum';
-	var $primaryKey = 'meta_id';
-    var $useTable = 'wp_postmeta';
+	public $name = 'Postmetum';
+	public $primaryKey = 'meta_id';
+    public $useTable = 'wp_postmeta';
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
-	var $belongsTo = array(
+	public $belongsTo = array(
 		'Post' => array(
 			'className' => 'Wordpress.Post',
 			'foreignKey' => 'post_id',

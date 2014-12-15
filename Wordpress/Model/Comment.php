@@ -1,12 +1,15 @@
 <?php
+
+App::uses('WordpressAppModel', 'Wordpress.Model');
+
 class Comment extends WordpressAppModel {
 
-	var $name = 'Comment';
-	var $primaryKey = 'comment_ID';
-    var $useTable = 'wp_comments';
+	public $name = 'Comment';
+	public $primaryKey = 'comment_ID';
+    public $useTable = 'wp_comments';
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
-	var $belongsTo = array(
+	public $belongsTo = array(
 		'User' => array(
 			'className' => 'Wordpress.User',
 			'foreignKey' => 'user_id',
@@ -30,7 +33,7 @@ class Comment extends WordpressAppModel {
 		)
 	);
 
-	var $hasMany = array(
+	public $hasMany = array(
 		'Commentmetum' => array(
 			'className' => 'Wordpress.Commentmetum',
 			'foreignKey' => 'comment_id',
